@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/finder_nav"
+        android:title="Finder"
+        android:icon="@drawable/ic_finder_navi"/>
+
+    <item
+        android:id="@+id/chat_nav"
+        android:title="Chat"
+        android:icon="@drawable/ic_chat_navi"/>
+
+    <item
+        android:id="@+id/share_nav"
+        android:title="Share"
+        android:icon="@drawable/ic_share_navi"/>
+
+    <item
+        android:id="@+id/me_nav"
+        android:title="Me"
+        android:icon="@drawable/ic_me_navi"/>
+
+</menu>
