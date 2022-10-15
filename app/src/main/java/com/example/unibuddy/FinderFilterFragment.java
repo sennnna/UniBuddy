@@ -16,6 +16,9 @@ public class FinderFilterFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.finder_filter_fragment, container, false);
 
+        getActivity().findViewById(R.id.finder_top_navigator).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.bottom_navigator).setVisibility(View.INVISIBLE);
+
         return view;
     }
 }
