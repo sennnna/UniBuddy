@@ -14,7 +14,7 @@ public class FinderListFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view =  inflater.inflate(R.layout.fragment_list_fragment, container, false);
+        View view =  inflater.inflate(R.layout.finder_list_fragment, container, false);
 
         Button map_view = view.findViewById(R.id.map_view);
         map_view.setOnClickListener(this);

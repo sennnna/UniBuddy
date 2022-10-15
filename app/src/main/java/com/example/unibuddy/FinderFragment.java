@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class FinderFragment extends Fragment implements View.OnClickListener {
+public class FinderFragment extends Fragment {
 
     SupportMapFragment supportMapFragment;
     FusedLocationProviderClient client;
@@ -61,7 +62,24 @@ public class FinderFragment extends Fragment implements View.OnClickListener {
         }
 
         Button list_view = view.findViewById(R.id.list_view);
-        list_view.setOnClickListener(this);
+        list_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId() == R.id.list_view) {
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container, new FinderListFragment()).commit();
+                }
+            }
+        });
+
+        ImageButton filter = view.findViewById(R.id.filter);
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId() == R.id.filter) {
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container, new FinderFilterFragment()).commit();
+                }
+            }
+        });
 
         return view;
     }
@@ -129,13 +147,5 @@ public class FinderFragment extends Fragment implements View.OnClickListener {
                 googleMap.addMarker(options);
             }
         });
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.list_view:
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, new FinderListFragment()).commit();
-        }
     }
 }

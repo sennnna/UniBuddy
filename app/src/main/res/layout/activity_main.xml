@@ -22,4 +22,12 @@
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"/>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/finder_top_navigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/finder_top_navigation"
+        android:background="?android:attr/windowBackground"
+        app:itemTextColor="@drawable/selector"/>
+
 </RelativeLayout>

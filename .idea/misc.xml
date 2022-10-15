@@ -5,13 +5,17 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.201" />
         <entry key="app/src/main/res/drawable/selector.xml" value="0.201" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/chat_fragment.xml" value="0.16742654508611957" />
-        <entry key="app/src/main/res/layout/finder_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/finder_campus_fragment.xml" value="0.16742654508611957" />
+        <entry key="app/src/main/res/layout/finder_filter_fragment.xml" value="0.16742654508611957" />
+        <entry key="app/src/main/res/layout/finder_fragment.xml" value="0.16742654508611957" />
+        <entry key="app/src/main/res/layout/finder_list_fragment.xml" value="0.16742654508611957" />
         <entry key="app/src/main/res/layout/fragment_list_fragment.xml" value="0.16742654508611957" />
         <entry key="app/src/main/res/layout/me_fragment.xml" value="0.16742654508611957" />
         <entry key="app/src/main/res/layout/share_fragment.xml" value="0.16742654508611957" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.33794871794871795" />
+        <entry key="app/src/main/res/menu/finder_top_navigation.xml" value="0.33794871794871795" />
       </map>
     </option>
   </component>
