@@ -13,11 +13,13 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -33,7 +35,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class FinderFragment extends Fragment {
+public class FinderFragment extends Fragment implements View.OnClickListener {
 
     SupportMapFragment supportMapFragment;
     FusedLocationProviderClient client;
@@ -48,7 +50,6 @@ public class FinderFragment extends Fragment {
 
         client = LocationServices.getFusedLocationProviderClient(getActivity());
 
-
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
@@ -58,6 +59,9 @@ public class FinderFragment extends Fragment {
         else {
             requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, 100);
         }
+
+        Button list_view = view.findViewById(R.id.list_view);
+        list_view.setOnClickListener(this);
 
         return view;
     }
@@ -104,7 +108,7 @@ public class FinderFragment extends Fragment {
                                     }
                                 };
 
-                                client.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
+                                client.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper());
                             }
                         }
                     });
@@ -127,4 +131,11 @@ public class FinderFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.list_view:
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, new FinderListFragment()).commit();
+        }
+    }
 }

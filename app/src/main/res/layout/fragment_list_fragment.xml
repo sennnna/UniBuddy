@@ -3,22 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/map"
-        tools:context=".MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
-
     <Button
-        android:id="@+id/list_view"
+        android:id="@+id/map_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:text="List View"
-        android:drawableLeft="@drawable/ic_list_finder"
+        android:text="Map View"
+        android:drawableLeft="@drawable/ic_map_view"
         android:drawableTint="@color/white"/>
 
 </RelativeLayout>
